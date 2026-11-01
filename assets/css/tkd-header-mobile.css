@@ -1,0 +1,22 @@
+/*
+ * هدر تکدوز — منوی اصلی در عرض‌های کمتر از ۱۰۲۴px جا نمی‌شد و آیتم‌ها از دو طرف بیرون می‌زدند
+ * (در موبایل فقط ۲ تا ۳ آیتم دیده می‌شد و بقیه قابل دسترس نبود).
+ * در این عرض‌ها منو به نوار افقیِ قابل اسکرول تبدیل می‌شود؛ اگر جا شود همچنان وسط‌چین می‌ماند.
+ * دسکتاپ (۱۰۲۴px به بالا) هیچ تغییری ندارد.
+ */
+@media (max-width: 1023px) {
+	.rb_header_menu_wrap ul.menu {
+		justify-content: flex-start;
+		justify-content: safe center;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior-x: contain;
+		scrollbar-width: none;
+	}
+	.rb_header_menu_wrap ul.menu::-webkit-scrollbar {
+		display: none;
+	}
+	.rb_header_menu_wrap ul.menu > li {
+		flex: 0 0 auto;
+	}
+}

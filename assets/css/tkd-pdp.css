@@ -1,0 +1,544 @@
+/*
+ * صفحه محصول تکدوز — استایل اصلی (ACF Blocks)
+ * از Additional CSS وردپرس به این فایل منتقل شد؛ فقط روی صفحه محصول بارگذاری می‌شود.
+ * نسخه قبلی: _backup-pdp-20261021/additional-css.before-move.txt
+ */
+
+
+
+
+
+
+
+/* دکمه راهنمای سایر روپوش ها  */
+.size-guide-btn{
+  background:#1f6f64;
+  color:#fff;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.size-modal{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+
+
+
+.close-size{
+  float:left;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.size-modal table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.size-modal th, .size-modal td{
+  border:1px solid #ddd;
+  padding:8px;
+  text-align:center;
+}
+
+.size-modal th{
+  background:#f4c542;
+  font-weight:bold;
+}
+
+.size-modal tr:nth-child(even){
+  background:#f9f9f9;
+}
+
+.size-modal-content{
+  background:#fff;
+  margin:60px auto;
+  padding:22px;
+  width:90%;
+  max-width:650px;
+  border-radius:14px;
+  position:relative;
+}
+
+/* کانتینر اصلی */
+.size-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+/* جدول */
+.size-table{
+  flex:1;
+}
+
+/* تصویر */
+.size-image{
+  flex:0 0 260px;
+  text-align:center;
+}
+
+.size-image img{
+  width:100%;
+  max-width:220px;
+}
+
+/* جدول */
+.size-table table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:15px;
+}
+
+.size-table th,
+.size-table td{
+  border:1px solid #ddd;
+  padding:10px;
+  text-align:center;
+}
+
+.size-table th{
+  background:#f4c542;
+  font-weight:bold;
+}
+@media (max-width:768px){
+
+  .size-modal-content{
+    width:95%;
+    padding:15px;
+    margin:20px auto;
+  }
+
+  .size-wrapper{
+    gap:10px;
+  }
+
+  .size-image{
+    flex:0 0 90px;
+  }
+
+  .size-image img{
+    max-width:90px;
+  }
+
+  .size-table table{
+    font-size:12px;
+  }
+
+  .size-table th,
+  .size-table td{
+    padding:5px;
+  }
+}
+
+.close-size{
+  position:absolute;
+  top:10px;
+  left:15px;
+  font-size:30px;
+  cursor:pointer;
+}
+
+.size-modal{
+  backdrop-filter: blur(3px);
+}
+
+/* راهنما کودکان */
+.kids-size-guide-btn{
+  background:#1f6f64;
+  color:#fff;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.kids-size-modal{
+  display:none;
+  position:fixed;
+  z-index:99999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(3px);
+}
+
+.kids-size-modal-content{
+  background:#fff;
+  width:90%;
+  max-width:500px;
+  margin:60px auto;
+  padding:20px;
+  border-radius:14px;
+  position:relative;
+}
+
+.kids-close-size{
+  position:absolute;
+  top:10px;
+  left:15px;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.kids-size-modal table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+
+.kids-size-modal th,
+.kids-size-modal td{
+  border:1px solid #ddd;
+  padding:10px;
+  text-align:center;
+  font-size:14px;
+}
+
+.kids-size-modal th{
+  background:#f4c542;
+}
+
+html:has(body.single-product),body.single-product{overflow-x:hidden;overflow-x:clip}
+.tkd-pdp{--navy:#263a65;--navy-d:#1c2c4e;--gold:#f2a900;--green:#2fa866;--bg:#f1f3f7;--ink:#161c2d;--muted:#6b7488;--line:#e6e9f0;--pill:#f1f3f7;
+  position:relative;isolation:isolate;color:var(--ink);line-height:1.9;font-size:15.5px}
+.tkd-pdp *,.tkd-pdp *::before,.tkd-pdp *::after{box-sizing:border-box}
+.tkd-pdp svg{display:block}
+
+/* خنثی کردن استایل دکمه‌های قالب فلت‌سام (علت گرد نبودن عکس‌ها و به‌هم‌ریختگی تب‌ها) */
+.tkd-pdp button:not(.single_add_to_cart_button){
+  margin:0 !important;min-height:0 !important;max-width:none !important;line-height:1.4 !important;
+  text-transform:none !important;letter-spacing:0 !important;font-family:inherit;cursor:pointer;
+  vertical-align:middle;box-shadow:none;text-shadow:none}
+
+.tkd-wrap{max-width:1160px;margin-inline:auto;padding-inline:16px}
+.tkd-band{position:relative}
+.tkd-band::before{content:"";position:absolute;inset:0 -100vmax;background:
+  radial-gradient(600px 300px at 85% 0%,#e3e9f7 0,transparent 70%),var(--bg);z-index:-1}
+.tkd-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;padding:34px 16px 44px;align-items:start}
+
+/* ---------- گالری ---------- */
+.tkd-gal{min-width:0;position:sticky;top:90px}
+.tkd-stage{position:relative;aspect-ratio:1/1;background:#fff;border-radius:30px;overflow:hidden;box-shadow:0 30px 60px -36px rgba(25,40,80,.45)}
+.tkd-stage img{width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in;animation:tkdIn .35s ease}
+@keyframes tkdIn{from{opacity:.4;transform:scale(.985)}to{opacity:1;transform:none}}
+.tkd-zoom{position:absolute;bottom:14px;inset-inline-start:14px;width:44px !important;height:44px !important;padding:0 !important;border-radius:50% !important;background:#fff !important;border:1px solid var(--line) !important;display:grid !important;place-items:center;color:var(--ink) !important}
+.tkd-count{position:absolute;top:14px;inset-inline-end:14px;background:rgba(22,28,45,.72);color:#fff;font-size:12.5px;padding:2px 12px;border-radius:999px;line-height:1.9}
+.tkd-count b{font-weight:700}
+
+.tkd-thumbs::-webkit-scrollbar{display:none}
+.tkd-th{flex:0 0 auto !important;width:62px !important;height:62px !important;aspect-ratio:1/1;padding:0 !important;border-radius:50% !important;overflow:hidden;
+  border:2.5px solid transparent !important;background:#fff !important;outline:1px solid var(--line);outline-offset:-1px;scroll-snap-align:center;transition:border-color .15s,transform .15s}
+.tkd-th img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.tkd-th:hover{transform:translateY(-2px)}
+.tkd-th.on{border-color:var(--navy) !important;outline-color:transparent}
+
+/* ---------- کارت خرید ---------- */
+.tkd-card{background:#fff;border-radius:30px;padding:26px 26px 20px;box-shadow:0 30px 60px -36px rgba(25,40,80,.45);min-width:0}
+.tkd-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tkd-pill{display:inline-flex;align-items:center;gap:5px;padding:2px 14px;border-radius:999px;border:1px solid var(--line);background:#fafbfd;font-size:13px;color:#4b5468 !important;text-decoration:none;line-height:1.9}
+.tkd-pill span{color:var(--muted)}
+a.tkd-pill:hover{background:var(--pill)}
+.tkd-pill-rate{color:#a06a00 !important;border-color:#f6dfa8;background:#fff8e6}
+.tkd-pill-ok{color:#1f7a49 !important;border-color:#bfe6cf;background:#eefaf3}
+.tkd-title{font-size:24px !important;font-weight:800 !important;line-height:1.6 !important;margin:0 0 18px !important;color:var(--ink);text-transform:none;letter-spacing:0}
+
+.tkd-card .reset_variations,.tkd-card .woocommerce-variation-price,.tkd-card .woocommerce-variation-description,.tkd-card .woocommerce-variation-availability{display:none !important}
+.tkd-card .single_variation{margin:0}
+.tkd-card table.variations{display:block;width:100%;border:0;margin:0}
+.tkd-card table.variations tbody{display:block}
+.tkd-card table.variations tr{display:block;margin:0 0 16px;border-radius:18px}
+.tkd-card table.variations th.label,.tkd-card table.variations td.label{display:block;text-align:start;padding:0 0 8px;border:0;background:none}
+.tkd-card table.variations th.label label{font-weight:700;margin:0;font-size:14.5px;color:var(--ink)}
+.tkd-card table.variations td.value{display:block;padding:0;border:0;background:none}
+.tkd-card table.variations .tkd-has-pills select{display:none !important}
+.tkd-need{animation:tkdShake .45s ease}
+.tkd-card tr.tkd-need th.label label{color:#c62828}
+.tkd-card tr.tkd-need th.label label::after{content:"  ← لطفاً انتخاب کنید";font-weight:500;font-size:13px}
+@keyframes tkdShake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+
+.tkd-opts{display:flex;flex-wrap:wrap;gap:10px}
+.tkd-opt{display:inline-flex !important;align-items:center;gap:9px;min-width:56px;height:46px;padding:0 20px !important;justify-content:center;border-radius:999px !important;
+  background:var(--pill) !important;border:1.5px solid transparent !important;font-weight:700;font-size:14.5px;color:var(--ink) !important;transition:background .15s,color .15s,transform .1s}
+.tkd-opt:hover{background:#e7eaf2 !important}
+.tkd-opt:active{transform:scale(.96)}
+.tkd-opt[aria-pressed="true"]{background:var(--navy) !important;color:#fff !important}
+.tkd-opt.is-off{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+.tkd-pdp button:focus-visible,.tkd-pdp a:focus-visible{outline:3px solid #2f6bff;outline-offset:2px}
+.tkd-dotc{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);flex:none}
+
+.tkd-card form.cart:not(.variations_form),.tkd-card .woocommerce-variation-add-to-cart{display:grid !important;grid-template-columns:auto 1fr;column-gap:16px;row-gap:10px;align-items:end;margin:0;padding:0}
+.tkd-card .tkd-svc-wrap{grid-column:1 / -1;grid-row:1;margin:0 0 6px;padding:14px;border-radius:22px;background:#f7f9fd;border:1px dashed #cfd7e8}
+.tkd-qlabel{grid-column:1;grid-row:2;font-size:13.5px;color:var(--muted);line-height:1.5}
+.tkd-card .quantity{grid-column:1;grid-row:3;display:inline-flex !important;align-items:center;background:var(--pill);border-radius:999px;height:54px;padding:0 6px;margin:0 !important;border:0;width:auto}
+.tkd-card .quantity input.minus,.tkd-card .quantity input.plus,.tkd-card .quantity .ux-quantity__button{background:none !important;border:0 !important;box-shadow:none !important;width:40px;height:40px;min-height:0;font-size:20px;color:var(--ink);padding:0;margin:0 !important;border-radius:50% !important;line-height:1}
+.tkd-card .quantity input.qty{width:44px;height:40px;border:0 !important;background:none !important;box-shadow:none !important;text-align:center;font-weight:800;font-size:16px;padding:0;margin:0 !important;-moz-appearance:textfield}
+.tkd-card .quantity input.qty::-webkit-outer-spin-button,.tkd-card .quantity input.qty::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.tkd-final{grid-column:2;grid-row:2 / 4;align-self:end;line-height:1.5;padding-bottom:6px;text-align:end}
+.tkd-final small{display:block;font-size:13.5px;color:var(--muted)}
+.tkd-final b{font-size:24px;font-weight:800;color:var(--navy)}
+.tkd-final i{font-style:normal;font-size:13px;color:var(--muted);margin-inline-start:4px}
+.tkd-card .single_add_to_cart_button{grid-column:1 / -1;grid-row:4;width:100% !important;height:60px;min-height:60px;border-radius:999px !important;background:var(--navy) !important;color:#fff !important;border:0 !important;font-weight:800;font-size:17px;display:flex !important;align-items:center;justify-content:center;gap:10px;margin:6px 0 0 !important;padding:0 20px;text-transform:none;letter-spacing:0;box-shadow:0 18px 32px -14px rgba(38,58,101,.7) !important;transition:transform .15s,filter .15s}
+.tkd-card .single_add_to_cart_button::before{content:"";width:22px;height:22px;background:currentColor;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M6 8h12l1 12H5z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M6 8h12l1 12H5z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/></svg>") center/contain no-repeat}
+.tkd-card .single_add_to_cart_button:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.tkd-card .single_add_to_cart_button.disabled,.tkd-card .single_add_to_cart_button:disabled{opacity:.6;box-shadow:none !important}
+
+/* چاپ و گلدوزی */
+.tkd2-head{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 10px}
+.tkd2-head b{font-size:14.5px;font-weight:700}
+.tkd2-head span{font-size:12px;color:var(--muted);background:#fff;padding:0 10px;border-radius:999px}
+.tkd2-row{display:grid;grid-template-columns:40px 1fr;gap:8px;margin-bottom:8px;align-items:center}
+.tkd2-side{font-size:13.5px;font-weight:700;color:var(--muted)}
+.tkd2-opts{display:flex;flex-wrap:wrap;gap:8px}
+.tkd2-opt{position:relative;display:inline-flex;align-items:center;gap:8px;margin:0 !important;padding:0 14px;min-height:46px;border-radius:999px;background:#fff;border:1.5px solid var(--line);cursor:pointer;line-height:1.3;transition:background .15s,border-color .15s}
+.tkd2-opt input{position:absolute;opacity:0;pointer-events:none}
+.tkd2-dot{width:16px;height:16px;border-radius:50%;border:2px solid #b9c0d0;flex:none;position:relative}
+.tkd2-opt input:checked ~ .tkd2-dot{border-color:var(--navy)}
+.tkd2-opt input:checked ~ .tkd2-dot::after{content:"";position:absolute;inset:2px;border-radius:50%;background:var(--navy)}
+.tkd2-opt:has(input:checked){background:#e8ecf7;border-color:var(--navy)}
+.tkd2-opt input:focus-visible ~ .tkd2-dot{outline:3px solid #2f6bff;outline-offset:2px}
+.tkd2-txt{display:flex;flex-direction:column;line-height:1.35}
+.tkd2-txt b{font-size:14px;font-weight:700}
+.tkd2-txt em{font-style:normal;font-size:11.5px;color:var(--navy);white-space:nowrap}
+.tkd-up{margin-top:10px}
+.tkd-up[hidden]{display:none}
+.tkd-up-box{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;background:#fff;border:2px dashed var(--navy);cursor:pointer;margin:0}
+.tkd-up-box input{position:absolute;width:1px;height:1px;opacity:0}
+.tkd-up-ic{width:40px;height:40px;border-radius:50%;background:#e8ecf7;display:grid;place-items:center;flex:none}
+.tkd-up-ic svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:1.8}
+.tkd-up-t{display:flex;flex-direction:column;line-height:1.5;min-width:0}
+.tkd-up-t b{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tkd-up-t small{font-size:12px;color:var(--muted)}
+.tkd-up.has-file .tkd-up-box{border-style:solid;border-color:var(--green);background:#eefaf3}
+.tkd-up.has-file .tkd-up-ic{background:var(--green)}
+.tkd-up.has-file .tkd-up-ic svg{stroke:#fff}
+.tkd-up.tkd-need .tkd-up-box{border-color:#c62828;background:#fff3f3}
+
+.tkd-trust{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tkd-trust li{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:12.5px;color:#4b5468;line-height:1.5;margin:0}
+.tkd-trust svg{width:26px;height:26px;stroke:var(--navy);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tkd-consult{margin-top:14px;border-radius:22px;background:#f6f8fc;padding:14px}
+.tkd-consult p{margin:0 0 10px;text-align:center;font-size:13.5px;color:var(--muted)}
+.tkd-btns{display:flex;gap:10px}
+.tkd-btns a{flex:1;display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:999px;font-weight:700;font-size:14.5px;text-decoration:none;color:#fff !important}
+.tkd-wa{background:#3fb868}
+.tkd-call{background:var(--navy)}
+
+/* ---------- تب‌ها ---------- */
+.tkd-tabs-area{position:relative}
+.tkd-tabs-area::before{content:"";position:absolute;inset:0 -100vmax;background:#f8f9fc;z-index:-1;border-top:1px solid var(--line)}
+.tkd-tabs-area .tkd-wrap{padding-block:30px 44px}
+.tkd-tabs{display:flex;gap:8px;overflow-x:auto;justify-content:center;margin:0 auto 22px;scrollbar-width:none;max-width:900px;padding:4px}
+.tkd-tabs::-webkit-scrollbar{display:none}
+.tkd-tab{flex:0 0 auto !important;display:inline-flex !important;align-items:center;gap:8px;height:46px;padding:0 18px !important;white-space:nowrap;
+  background:#fff !important;border:1px solid var(--line) !important;border-radius:999px !important;color:var(--muted) !important;font-weight:600;font-size:14.5px}
+.tkd-tab svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.tkd-tab:hover{color:var(--ink) !important}
+.tkd-tab[aria-selected="true"]{background:var(--navy) !important;border-color:var(--navy) !important;color:#fff !important}
+.tkd-panel{background:#fff;border-radius:26px;padding:clamp(20px,3.4vw,36px);max-width:900px;margin:0 auto;box-shadow:0 20px 44px -34px rgba(25,40,80,.4)}
+.tkd-panel[hidden]{display:none}
+.tkd-panel > h2:first-child{display:none}
+.tkd-panel p{margin-bottom:1em;color:#3d465c}
+.tkd-panel h2,.tkd-panel h3{font-size:1.15rem;font-weight:800;line-height:1.7;color:var(--navy);border-inline-start:4px solid var(--navy);padding-inline-start:12px;margin:1.4em 0 .6em}
+.tkd-panel ul:not(.commentlist){list-style:none;margin:0 0 1.2em;padding:0;columns:2;column-gap:32px}
+.tkd-panel ul:not(.commentlist) > li{position:relative;padding:3px 26px 3px 0;margin:0 0 4px;break-inside:avoid}
+.tkd-panel ul:not(.commentlist) > li::before{content:"✓";position:absolute;right:0;top:3px;color:var(--navy);font-weight:800;font-size:14px}
+.tkd-panel table{width:100%;border-collapse:collapse;margin:0 0 6px}
+.tkd-panel table td,.tkd-panel table th{padding:11px 10px;border:0;border-bottom:1px solid var(--line);text-align:start;font-size:14.5px}
+.tkd-panel table tr:last-child td,.tkd-panel table tr:last-child th{border-bottom:0}
+.tkd-panel table td:first-child,.tkd-panel table th{color:var(--muted);width:32%;font-weight:500}
+.tkd-panel table td:last-child{font-weight:600}
+.tkd-size-table th,.tkd-size-table td{text-align:center !important;width:auto !important}
+.tkd-size-table thead th{background:var(--navy);color:#fff !important;font-weight:700}
+.tkd-size-table tbody tr:nth-child(even) > *{background:var(--bg)}
+.tkd-size-table tbody th{font-weight:800;color:var(--ink) !important}
+.tkd-note{font-size:13px;color:var(--muted)}
+
+/* ---------- دیدگاه‌ها ---------- */
+.tkd-rs{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;padding:20px;border-radius:22px;background:linear-gradient(135deg,#f3f6fc,#fff8e6);margin-bottom:22px}
+.tkd-rs-score{text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
+.tkd-rs-score b{font-size:52px;font-weight:900;line-height:1;color:var(--ink)}
+.tkd-rs-score small{color:var(--muted);font-size:13px}
+.tkd-stars{direction:ltr;font-size:22px;letter-spacing:2px;line-height:1}
+.tkd-stars::before{content:"★★★★★";background:linear-gradient(90deg,var(--gold) var(--r),#d8dce5 var(--r));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tkd-rs-bars{display:flex;flex-direction:column;gap:7px}
+.tkd-rs-row{display:grid;grid-template-columns:64px 1fr 30px;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
+.tkd-rs-row i{height:9px;border-radius:9px;background:#e4e8f0;overflow:hidden}
+.tkd-rs-row em{display:block;height:100%;border-radius:9px;background:var(--gold)}
+.tkd-rs-empty{display:flex;flex-direction:column;gap:4px;padding:22px;border-radius:22px;background:linear-gradient(135deg,#f3f6fc,#fff8e6);margin-bottom:18px;text-align:center}
+.tkd-rs-empty b{font-size:16px}
+.tkd-rs-empty span{color:var(--muted);font-size:14px}
+.tkd-panel #reviews #comments > h2{display:none}
+.tkd-panel .woocommerce-noreviews{display:none}
+.tkd-panel .commentlist{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px}
+.tkd-panel .commentlist > li{margin:0;padding:0}
+.tkd-panel .commentlist .comment_container{display:flex;gap:14px;padding:16px;border-radius:20px;border:1px solid var(--line);background:#fff}
+.tkd-panel .commentlist img.avatar{width:46px !important;height:46px !important;border-radius:50% !important;position:static !important;float:none !important;flex:none;border:0;padding:0;background:var(--pill)}
+.tkd-panel .commentlist .comment-text{flex:1;min-width:0;margin:0 !important;padding:0 !important;border:0 !important}
+.tkd-panel .commentlist .meta{margin:0 0 4px;font-size:13px;color:var(--muted)}
+.tkd-panel .commentlist .meta strong{color:var(--ink);font-size:14.5px}
+.tkd-panel .commentlist .description p{margin:0;color:#3d465c}
+.tkd-panel .commentlist .star-rating{float:none;margin:0 0 4px;color:var(--gold)}
+.tkd-panel .commentlist .children{list-style:none;margin:10px 30px 0 0;padding:0}
+.tkd-panel .commentlist .children .comment_container{background:#f6f8fc;border-color:transparent}
+.tkd-collapsed{display:none !important}
+.tkd-rev-btn{display:inline-flex !important;align-items:center;justify-content:center;height:48px;padding:0 26px !important;margin:4px 0 14px !important;border:0 !important;border-radius:999px !important;background:var(--gold) !important;color:#1c1400 !important;font-weight:800;font-size:15px}
+#review_form_wrapper{padding:18px;border-radius:22px;background:#f7f9fd}
+#review_form .comment-form-rating p.stars a{font-size:26px;color:var(--gold)}
+#review_form textarea,#review_form input[type=text],#review_form input[type=email]{border-radius:14px;border:1px solid var(--line);background:#fff;box-shadow:none}
+#review_form .form-submit input[type=submit]{border-radius:999px;background:var(--navy);color:#fff;padding:0 28px;height:48px}
+
+/* ---------- محصولات مرتبط و کارت محصول ---------- */
+.tkd-related{padding-block:36px 40px}
+.tkd-sec-title{font-size:20px !important;font-weight:800;margin:0 0 18px;color:var(--ink)}
+.tkd-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tkd-pc{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:10px 10px 12px;min-width:0}
+.tkd-pc-img{display:block;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:var(--bg)}
+.tkd-pc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.tkd-pc:hover .tkd-pc-img img{transform:scale(1.04)}
+.tkd-pc-name{font-size:14px;font-weight:700;color:var(--ink) !important;line-height:1.6;text-decoration:none;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:3.2em;padding-inline:4px}
+.tkd-pc-price{font-size:14px;color:var(--navy);font-weight:700;padding-inline:4px}
+.tkd-pc-price del{color:var(--muted);font-weight:400;font-size:12px}
+.tkd-pc-price ins{text-decoration:none}
+.tkd-pc-btn{margin-top:auto;display:flex;align-items:center;justify-content:center;height:40px;border-radius:999px;background:var(--navy);color:#fff !important;font-size:13.5px;font-weight:700;text-decoration:none}
+.tkd-pc-btn.is-ghost{background:var(--pill);color:var(--ink) !important}
+.tkd-pc-btn.loading{opacity:.6}
+.tkd-pc-btn.is-done{background:var(--green)}
+.tkd-pc .added_to_cart{display:none}
+
+/* ---------- پاپ‌آپ بعد از افزودن ---------- */
+dialog.tkd-addon{border:0;padding:0;border-radius:28px;width:min(720px,94vw);max-height:90vh;overflow:auto;background:#fff;box-shadow:0 40px 80px -30px rgba(10,20,50,.5)}
+dialog.tkd-addon::backdrop{background:rgba(12,18,34,.55);backdrop-filter:blur(3px)}
+dialog.tkd-addon[open]{animation:tkdPop .3s ease}
+@keyframes tkdPop{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.tkd-addon-in{position:relative;padding:24px}
+.tkd-addon-x{position:absolute;top:14px;inset-inline-end:14px;width:40px !important;height:40px !important;padding:0 !important;border-radius:50% !important;background:var(--pill) !important;border:0 !important;font-size:22px;color:var(--ink) !important}
+.tkd-addon-head{display:flex;align-items:center;gap:12px;padding-inline-end:44px}
+.tkd-addon-head b{display:block;font-size:17px}
+.tkd-addon-head small{color:var(--muted);font-size:13.5px}
+.tkd-addon-ok{width:46px;height:46px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:none}
+.tkd-addon-ok svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.tkd-addon-sub{margin:20px 0 12px;font-weight:700;font-size:15px}
+.tkd-addon-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.tkd-addon-act{display:flex;gap:10px;margin-top:20px}
+.tkd-addon-close,.tkd-addon-cart{flex:1;display:flex !important;align-items:center;justify-content:center;height:52px;padding:0 16px !important;border-radius:999px !important;font-weight:800;font-size:15px;text-decoration:none}
+.tkd-addon-close{background:var(--pill) !important;border:0 !important;color:var(--ink) !important}
+.tkd-addon-cart{background:var(--navy);color:#fff !important}
+
+/* ---------- نوار پایین موبایل ---------- */
+.tkd-sticky{display:none}
+@media (max-width:849px){
+  .tkd-sticky{display:block;position:fixed;inset-inline:0;bottom:0;z-index:90;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}
+  .tkd-sticky.is-on{transform:none}
+  .tkd-sticky-in{display:flex;align-items:center;gap:12px}
+  .tkd-sticky-t{flex:1;min-width:0;line-height:1.4}
+  .tkd-sticky-t small{display:block;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .tkd-sticky-t b{font-size:16px;color:var(--navy)}
+  .tkd-sticky-btn{height:48px;padding:0 22px !important;border-radius:999px !important;background:var(--navy) !important;color:#fff !important;border:0 !important;font-weight:800;font-size:15px}
+}
+
+/* ---------- بزرگ‌نمایی ---------- */
+dialog.tkd-lb{border:0;padding:0;margin:0;inset:0;width:100%;height:100%;max-width:none;max-height:none;background:rgba(9,13,24,.94)}
+dialog.tkd-lb::backdrop{background:transparent}
+.tkd-lb-in{display:grid;place-items:center;width:100%;height:100%;padding:16px}
+.tkd-lb img{max-width:min(94vw,900px);max-height:88vh;background:#fff;border-radius:20px}
+.tkd-lb-x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));inset-inline-start:14px;width:46px !important;height:46px !important;padding:0 !important;border-radius:50% !important;background:#fff !important;border:0 !important;font-size:22px;color:#000 !important}
+
+/* ---------- موبایل ---------- */
+@media (max-width:849px){
+  .tkd-hero{grid-template-columns:minmax(0,1fr);gap:16px;padding:0 0 24px}
+  .tkd-gal{position:static}
+  .tkd-stage{border-radius:0 0 28px 28px;box-shadow:none}
+
+  
+  .tkd-card{margin-inline:12px;border-radius:26px;padding:20px 16px 16px}
+  .tkd-title{font-size:20px !important}
+  .tkd-tabs{justify-content:flex-start;margin-inline:-16px;padding-inline:16px}
+  .tkd-tab{height:42px;padding:0 14px !important;font-size:14px}
+  .tkd-panel{border-radius:22px;padding:20px 16px}
+  .tkd-panel ul:not(.commentlist){columns:1}
+  .tkd-rs{grid-template-columns:1fr;gap:16px}
+  .tkd-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .tkd-addon-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  dialog.tkd-addon{width:100%;max-width:100%;margin:auto 0 0;border-radius:28px 28px 0 0;max-height:88vh}
+  .tkd-addon-act{flex-direction:column-reverse}
+  body.single-product{padding-bottom:76px}
+}
+@media (max-width:380px){
+  .tkd2-row{grid-template-columns:1fr}
+  .tkd-trust li{font-size:11.5px}
+}
+@media (prefers-reduced-motion:reduce){.tkd-pdp *,dialog.tkd-addon{animation:none !important;transition:none !important}
+}
+
+
+/* ---------- نوار تصاویر با دکمه قبلی/بعدی ---------- */
+.tkd-strip{display:flex;align-items:center;gap:8px;margin-top:14px}
+.tkd-thumbs{flex:1;min-width:0;display:flex;gap:10px;overflow-x:auto;padding:4px;scrollbar-width:none;scroll-snap-type:x mandatory}
+.tkd-nav{flex:none !important;width:42px !important;height:42px !important;padding:0 !important;border-radius:50% !important;
+  background:#fff !important;border:1px solid var(--line) !important;color:var(--ink) !important;display:grid !important;place-items:center;
+  box-shadow:0 8px 18px -12px rgba(20,30,60,.5) !important;transition:background .15s,color .15s}
+.tkd-nav:hover,.tkd-nav:active{background:var(--navy) !important;color:#fff !important;border-color:var(--navy) !important}
+
+/* جلوگیری از بیرون زدن هر چیزی از عرض صفحه */
+.tkd-pdp img,.tkd-pdp video,.tkd-pdp iframe{max-width:100%;height:auto}
+.tkd-panel{overflow-wrap:anywhere;word-break:break-word}
+.tkd-panel table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tkd-panel table tbody,.tkd-panel table thead{display:table;width:100%}
+#review_form_wrapper,#review_form,#respond,.comment-form{max-width:100%;overflow:hidden}
+#review_form textarea,#review_form input[type=text],#review_form input[type=email]{width:100% !important;max-width:100%}
+
+/* ---------- موبایل ---------- */
+@media (max-width:849px){
+  .tkd-wrap{padding-inline:12px}
+  .tkd-strip{padding-inline:12px;margin-top:12px}
+  .tkd-nav{width:38px !important;height:38px !important}
+  .tkd-th{width:52px !important;height:52px !important}
+  .tkd-tabs{margin-inline:-12px;padding-inline:12px}
+  .tkd-tabs-area .tkd-wrap{padding-block:22px 30px}
+  .tkd-panel{padding:18px 14px;font-size:15px}
+  .tkd-panel h2,.tkd-panel h3{font-size:1.05rem}
+  .tkd-panel table td,.tkd-panel table th{padding:9px 8px;font-size:13.5px}
+  .tkd-rs{padding:16px}
+  .tkd-rs-score b{font-size:44px}
+  .tkd-panel .commentlist .comment_container{padding:12px;gap:10px}
+  .tkd-panel .commentlist img.avatar{width:38px !important;height:38px !important}
+  .tkd-panel .commentlist .children{margin-inline-start:14px}
+  #review_form_wrapper{padding:14px}
+  .tkd-rev-btn{width:100%}
+  .tkd-opt{height:44px;padding:0 16px !important;font-size:14px}
+  .tkd2-opt{padding:0 12px;min-height:44px}
+  .tkd-final b{font-size:21px}
+  .tkd-card .single_add_to_cart_button{height:56px;min-height:56px;font-size:16px}
+  .tkd-btns a{font-size:14px}
+  .tkd-related{padding-block:26px 30px}
+  .tkd-sec-title{font-size:18px !important}
+  .tkd-pc{padding:8px 8px 10px;border-radius:18px}
+  .tkd-pc-name{font-size:13px}
+  .tkd-pc-btn{height:38px;font-size:12.5px}
+  .tkd-addon-in{padding:20px 14px calc(16px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:400px){
+  .tkd-card{margin-inline:8px;padding:18px 12px 14px}
+  .tkd-card form.cart:not(.variations_form),.tkd-card .woocommerce-variation-add-to-cart{grid-template-columns:1fr;row-gap:8px}
+  .tkd-qlabel,.tkd-card .quantity,.tkd-final,.tkd-card .tkd-svc-wrap,.tkd-card .single_add_to_cart_button{grid-column:1;grid-row:auto}
+  .tkd-final{text-align:start;padding-bottom:0}
+  .tkd-btns{flex-direction:column}
+  .tkd-trust{gap:4px}
+  .tkd-rs-row{grid-template-columns:54px 1fr 24px}
+}

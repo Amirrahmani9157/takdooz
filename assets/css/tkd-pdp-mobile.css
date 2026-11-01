@@ -1,0 +1,44 @@
+/*
+ * صفحه محصول تکدوز — اصلاحات موبایل
+ * بعد از Additional CSS (wp-custom-css) بارگذاری می‌شود و فقط روی صفحه محصول.
+ * طراحی اصلی در Additional CSS است؛ این فایل فقط ایرادهای موبایل را رفع می‌کند.
+ */
+
+@media (max-width: 849px) {
+
+	/* ۱) دکمه شناور سبد خرید روی دکمه «افزودن به سبد» نوار چسبان می‌افتاد */
+	body:has(.tkd-sticky.is-on) .rb_floating_cart {
+		bottom: calc(14px + 70px + env(safe-area-inset-bottom, 0px));
+		transition: bottom .25s ease, transform .2s, box-shadow .2s, opacity .2s;
+	}
+
+	/* ۲) دکمه‌های پاپ‌آپ بعد از افزودن به سبد در موبایل تا ۲۱px کوتاه می‌شدند */
+	.tkd-addon-close,
+	.tkd-addon-cart {
+		flex: 0 0 auto;
+		min-height: 48px;
+	}
+
+	/* ۳) چیپ دسته‌بندی/موجودی: سطح لمس بزرگ‌تر */
+	.tkd-pdp .tkd-pill {
+		min-height: 34px;
+	}
+
+	/* ۴) متن‌های خیلی ریز (۱۱.۵px) */
+	.tkd-pdp .tkd2-txt em,
+	.tkd-pdp .tkd-trust li,
+	.tkd-pdp .tkd-trust span {
+		font-size: 12px;
+	}
+
+	/* ۵) چک‌باکس فرم دیدگاه */
+	.tkd-pdp .comment-form-cookies-consent input[type="checkbox"] {
+		width: 18px;
+		height: 18px;
+		vertical-align: middle;
+	}
+	.tkd-pdp .comment-form-cookies-consent label {
+		display: inline;
+		line-height: 1.8;
+	}
+}
