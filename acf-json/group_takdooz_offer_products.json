@@ -1,0 +1,91 @@
+{
+	"key": "group_takdooz_offer_products",
+	"title": "بلوک: پیشنهاد ویژه + تایمر",
+	"fields": [
+		{
+			"key": "field_takdooz_op_title",
+			"label": "عنوان کمپین",
+			"name": "campain_title",
+			"type": "text",
+			"instructions": "اگر خالی بماند، از تنظیمات کلی سایت استفاده می‌شود.",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "",
+			"placeholder": ""
+		},
+		{
+			"key": "field_takdooz_op_text",
+			"label": "متن کمپین",
+			"name": "campain_text",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "",
+			"rows": 3,
+			"new_lines": ""
+		},
+		{
+			"key": "field_takdooz_op_date",
+			"label": "تاریخ پایان (شمارش معکوس)",
+			"name": "campain_date",
+			"type": "date_time_picker",
+			"instructions": "تا این زمان شمارش معکوس نمایش داده می‌شود. خالی = بخش پیشنهاد ویژه نمایش داده نمی‌شود.",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"display_format": "Y-m-d H:i:s",
+			"return_format": "Y-m-d H:i:s",
+			"first_day": 6
+		},
+		{
+			"key": "field_takdooz_op_link",
+			"label": "لینک «مشاهده همه محصولات»",
+			"name": "campain_link",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "",
+			"placeholder": ""
+		},
+		{
+			"key": "field_takdooz_op_tag",
+			"label": "نامک برچسب محصولات",
+			"name": "product_tag_slug",
+			"type": "text",
+			"instructions": "محصولاتی با این برچسب (product_tag) نمایش داده می‌شوند. پیش‌فرض: takdooz-offer",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "takdooz-offer",
+			"placeholder": "takdooz-offer"
+		},
+		{
+			"key": "field_takdooz_op_count",
+			"label": "تعداد محصول",
+			"name": "products_count",
+			"type": "number",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": 10,
+			"min": 1,
+			"max": 24,
+			"placeholder": "10"
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "acf/takdooz-offer-products" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک پیشنهاد ویژه و تایمر (Plan C).",
+	"show_in_rest": 0,
+	"modified": 1780000003
+}

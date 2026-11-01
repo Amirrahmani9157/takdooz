@@ -1,0 +1,67 @@
+{
+	"key": "group_takdooz_newest_products",
+	"title": "بلوک: جدیدترین محصولات",
+	"fields": [
+		{
+			"key": "field_takdooz_np_heading",
+			"label": "عنوان بخش",
+			"name": "heading",
+			"type": "text",
+			"instructions": "اگر خالی بماند: «جدید ترین محصولات».",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "جدید ترین محصولات",
+			"placeholder": "جدید ترین محصولات"
+		},
+		{
+			"key": "field_takdooz_np_subtitle",
+			"label": "زیرعنوان",
+			"name": "subtitle",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "با جدیدترین محصولات ما، کیفیت و تنوع را تجربه کنید.",
+			"placeholder": ""
+		},
+		{
+			"key": "field_takdooz_np_count",
+			"label": "تعداد محصول",
+			"name": "products_count",
+			"type": "number",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": 8,
+			"min": 1,
+			"max": 24,
+			"placeholder": "8"
+		},
+		{
+			"key": "field_takdooz_np_more",
+			"label": "لینک «مشاهده همه»",
+			"name": "show_more_link",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "/shop/?orderby=date",
+			"placeholder": "/shop/?orderby=date"
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "acf/takdooz-newest-products" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک جدیدترین محصولات (Plan C).",
+	"show_in_rest": 0,
+	"modified": 1780000002
+}

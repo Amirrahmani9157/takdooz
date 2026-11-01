@@ -1,0 +1,51 @@
+{
+	"key": "group_takdooz_featured_category",
+	"title": "بلوک: دسته‌بندی منتخب",
+	"fields": [
+		{
+			"key": "field_takdooz_fc_cat",
+			"label": "دسته‌بندی منتخب",
+			"name": "category",
+			"type": "taxonomy",
+			"instructions": "دسته‌ای که کارت آن و محصولاتش نمایش داده می‌شود. اگر خالی بماند، از تنظیمات کلی سایت استفاده می‌شود.",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"taxonomy": "product_cat",
+			"field_type": "select",
+			"add_term": 0,
+			"save_terms": 0,
+			"load_terms": 0,
+			"return_format": "id",
+			"multiple": 0,
+			"allow_null": 1
+		},
+		{
+			"key": "field_takdooz_fc_count",
+			"label": "تعداد محصول",
+			"name": "products_count",
+			"type": "number",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": 6,
+			"min": 1,
+			"max": 24,
+			"placeholder": "6"
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "acf/takdooz-featured-category" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک دسته‌بندی منتخب (Plan C).",
+	"show_in_rest": 0,
+	"modified": 1780000005
+}

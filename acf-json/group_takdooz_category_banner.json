@@ -1,0 +1,87 @@
+{
+	"key": "group_takdooz_category_banner",
+	"title": "بلوک: بنر دسته‌بندی",
+	"fields": [
+		{
+			"key": "field_takdooz_cb_image",
+			"label": "تصویر بنر",
+			"name": "banner_image",
+			"type": "image",
+			"instructions": "تصویر اصلی بنر. اگر خالی بماند، از تنظیمات کلی سایت استفاده می‌شود.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"return_format": "url",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": 0,
+			"min_height": 0,
+			"min_size": 0,
+			"max_width": 0,
+			"max_height": 0,
+			"max_size": 0,
+			"mime_types": ""
+		},
+		{
+			"key": "field_takdooz_cb_title",
+			"label": "عنوان",
+			"name": "banner_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_takdooz_cb_subtitle",
+			"label": "زیرعنوان",
+			"name": "banner_sub_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_takdooz_cb_link",
+			"label": "لینک دکمه",
+			"name": "banner_link",
+			"type": "url",
+			"instructions": "آدرس صفحه مقصد دکمه «مشاهده و خرید».",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "",
+			"placeholder": "https://"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/takdooz-category-banner"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک بنر دسته‌بندی صفحه خانه (Plan C).",
+	"show_in_rest": 0,
+	"modified": 1780000000
+}

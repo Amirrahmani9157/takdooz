@@ -1,0 +1,57 @@
+{
+	"key": "group_takdooz_testimonials",
+	"title": "بلوک: نظرات مشتریان",
+	"fields": [
+		{
+			"key": "field_takdooz_ts_heading",
+			"label": "عنوان بخش",
+			"name": "heading",
+			"type": "text",
+			"instructions": "اگر خالی بماند: «مشتریان ما چه میگویند؟».",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "مشتریان ما چه میگویند؟",
+			"placeholder": "مشتریان ما چه میگویند؟"
+		},
+		{
+			"key": "field_takdooz_ts_subtitle",
+			"label": "زیرعنوان",
+			"name": "subtitle",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "مشتریان ما همواره از کیفیت محصولات و خدمات سریع تکدوز رضایت داشته اند. رضایت شما، افتخار ماست.",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_takdooz_ts_count",
+			"label": "تعداد نظرات",
+			"name": "count",
+			"type": "number",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": 8,
+			"min": 1,
+			"max": 24,
+			"placeholder": "8"
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "acf/takdooz-testimonials" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک نظرات مشتریان (Plan C).",
+	"show_in_rest": 0,
+	"modified": 1780000006
+}

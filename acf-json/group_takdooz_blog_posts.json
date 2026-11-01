@@ -1,0 +1,68 @@
+{
+	"key": "group_takdooz_blog_posts",
+	"title": "بلوک: مقالات مجله",
+	"fields": [
+		{
+			"key": "field_takdooz_bp_heading",
+			"label": "عنوان بخش",
+			"name": "heading",
+			"type": "text",
+			"instructions": "اگر خالی بماند: «بیش از ۱۰۰ مقاله در مجله تک دوز».",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "بیش از ۱۰۰ مقاله در مجله تک دوز",
+			"placeholder": ""
+		},
+		{
+			"key": "field_takdooz_bp_subtitle",
+			"label": "زیرعنوان",
+			"name": "subtitle",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "با بیش از ۱۰۰ مقاله تخصصی در مجله تکدوز، تازه‌ترین مطالب درباره پوشاک صنعتی، نکات کاربردی و اخبار روز را با شما به اشتراک می‌گذاریم.",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_takdooz_bp_count",
+			"label": "تعداد مقاله",
+			"name": "posts_count",
+			"type": "number",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": 8,
+			"min": 1,
+			"max": 24,
+			"placeholder": "8"
+		},
+		{
+			"key": "field_takdooz_bp_more",
+			"label": "لینک «مشاهده همه پست‌ها»",
+			"name": "show_more_link",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "/blog",
+			"placeholder": "/blog"
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "acf/takdooz-blog-posts" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک مقالات مجله (Plan C).",
+	"show_in_rest": 0,
+	"modified": 1780000007
+}

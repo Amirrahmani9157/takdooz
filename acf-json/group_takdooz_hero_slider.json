@@ -1,0 +1,87 @@
+{
+	"key": "group_takdooz_hero_slider",
+	"title": "بلوک: اسلایدر اصلی",
+	"fields": [
+		{
+			"key": "field_takdooz_hs_slides",
+			"label": "اسلایدها",
+			"name": "slides",
+			"type": "repeater",
+			"instructions": "اسلایدهای بالای صفحه اصلی. اگر خالی بماند، از نوع‌محتوای «اسلایدر» (Slider CPT) استفاده می‌شود.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"layout": "block",
+			"pagination": 0,
+			"min": 0,
+			"max": 0,
+			"collapsed": "field_takdooz_hs_link",
+			"button_label": "افزودن اسلاید",
+			"rows_per_page": 20,
+			"sub_fields": [
+				{
+					"key": "field_takdooz_hs_desktop",
+					"label": "تصویر دسکتاپ",
+					"name": "desktop_image",
+					"type": "image",
+					"instructions": "تصویر اصلی اسلاید (نمایش در دسکتاپ).",
+					"required": 1,
+					"wrapper": { "width": "50", "class": "", "id": "" },
+					"return_format": "id",
+					"preview_size": "medium",
+					"library": "all"
+				},
+				{
+					"key": "field_takdooz_hs_mobile",
+					"label": "تصویر موبایل",
+					"name": "mobile_image",
+					"type": "image",
+					"instructions": "اختیاری. اگر خالی بماند، همان تصویر دسکتاپ نمایش داده می‌شود.",
+					"required": 0,
+					"wrapper": { "width": "50", "class": "", "id": "" },
+					"return_format": "id",
+					"preview_size": "medium",
+					"library": "all"
+				},
+				{
+					"key": "field_takdooz_hs_link",
+					"label": "لینک اسلاید",
+					"name": "link",
+					"type": "url",
+					"instructions": "",
+					"required": 0,
+					"wrapper": { "width": "", "class": "", "id": "" },
+					"placeholder": "https://"
+				},
+				{
+					"key": "field_takdooz_hs_content",
+					"label": "محتوا (عنوان، متن، دکمه)",
+					"name": "content",
+					"type": "wysiwyg",
+					"instructions": "",
+					"required": 0,
+					"wrapper": { "width": "", "class": "", "id": "" },
+					"tabs": "all",
+					"toolbar": "full",
+					"media_upload": 1,
+					"delay": 0
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "acf/takdooz-hero-slider" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک اسلایدر اصلی صفحه خانه (Plan C) — مدیریت اسلایدها داخل بلوک.",
+	"show_in_rest": 0,
+	"modified": 1780000010
+}

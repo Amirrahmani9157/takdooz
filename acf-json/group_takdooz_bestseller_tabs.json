@@ -1,0 +1,110 @@
+{
+	"key": "group_takdooz_bestseller_tabs",
+	"title": "بلوک: پرفروش‌ترین محصولات",
+	"fields": [
+		{
+			"key": "field_takdooz_bt_heading",
+			"label": "عنوان بخش",
+			"name": "heading",
+			"type": "text",
+			"instructions": "اگر خالی بماند: «پرفروش ترین محصولات».",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "پرفروش ترین محصولات",
+			"placeholder": "پرفروش ترین محصولات"
+		},
+		{
+			"key": "field_takdooz_bt_cats",
+			"label": "دسته‌بندی‌ها (تب‌ها)",
+			"name": "categories",
+			"type": "taxonomy",
+			"instructions": "دسته‌هایی که به‌صورت تب نمایش داده می‌شوند. اگر خالی بماند، دسته‌های پیش‌فرض قبلی استفاده می‌شود.",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"taxonomy": "product_cat",
+			"field_type": "multi_select",
+			"add_term": 0,
+			"save_terms": 0,
+			"load_terms": 0,
+			"return_format": "id",
+			"multiple": 0,
+			"allow_null": 1
+		},
+		{
+			"key": "field_takdooz_bt_count",
+			"label": "تعداد محصول در هر تب",
+			"name": "products_count",
+			"type": "number",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": 8,
+			"min": 1,
+			"max": 24,
+			"placeholder": "8"
+		},
+		{
+			"key": "field_takdooz_bt_more",
+			"label": "لینک «نمایش بیشتر»",
+			"name": "show_more_link",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"default_value": "/shop/?orderby=popularity",
+			"placeholder": "/shop/?orderby=popularity"
+		},
+		{
+			"key": "field_takdooz_bt_autoplay",
+			"label": "حرکت خودکار اسلایدر",
+			"name": "autoplay",
+			"type": "true_false",
+			"instructions": "در صورت فعال بودن، محصولات به‌صورت خودکار جابه‌جا می‌شوند.",
+			"required": 0,
+			"wrapper": { "width": "50", "class": "", "id": "" },
+			"message": "فعال باشد",
+			"default_value": 0,
+			"ui": 1,
+			"ui_on_text": "فعال",
+			"ui_off_text": "غیرفعال"
+		},
+		{
+			"key": "field_takdooz_bt_autoplay_delay",
+			"label": "فاصله حرکت خودکار (ثانیه)",
+			"name": "autoplay_delay",
+			"type": "number",
+			"instructions": "زمان بین هر جابه‌جایی؛ مقدار پیشنهادی ۳ ثانیه است.",
+			"required": 0,
+			"conditional_logic": [
+				[
+					{
+						"field": "field_takdooz_bt_autoplay",
+						"operator": "==",
+						"value": "1"
+					}
+				]
+			],
+			"wrapper": { "width": "50", "class": "", "id": "" },
+			"default_value": 3,
+			"min": 1,
+			"max": 15,
+			"step": 1,
+			"placeholder": "3"
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "acf/takdooz-bestseller-tabs" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک پرفروش‌ترین محصولات (Plan C).",
+	"show_in_rest": 0,
+	"modified": 1784881200
+}

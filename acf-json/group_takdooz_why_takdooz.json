@@ -1,0 +1,58 @@
+{
+	"key": "group_takdooz_why_takdooz",
+	"title": "بلوک: چرا تکدوز",
+	"fields": [
+		{
+			"key": "field_takdooz_wt_video",
+			"label": "ویدیو",
+			"name": "why_takdooz_video",
+			"type": "file",
+			"instructions": "فایل ویدیو. اگر خالی بماند، از تنظیمات کلی سایت استفاده می‌شود.",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"return_format": "url",
+			"library": "all",
+			"mime_types": "mp4,webm,ogg,mov"
+		},
+		{
+			"key": "field_takdooz_wt_poster",
+			"label": "تصویر پوستر ویدیو",
+			"name": "why_takdooz_image",
+			"type": "image",
+			"instructions": "تصویری که پیش از پخش ویدیو نمایش داده می‌شود.",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"return_format": "url",
+			"preview_size": "medium",
+			"library": "all"
+		},
+		{
+			"key": "field_takdooz_wt_text",
+			"label": "متن",
+			"name": "why_takdooz_text",
+			"type": "wysiwyg",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "", "class": "", "id": "" },
+			"tabs": "all",
+			"toolbar": "full",
+			"media_upload": 1,
+			"delay": 0
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "acf/takdooz-why-takdooz" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "گروه فیلد بلوک چرا تکدوز (Plan C).",
+	"show_in_rest": 0,
+	"modified": 1780000004
+}
