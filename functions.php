@@ -8,7 +8,6 @@ require_once get_stylesheet_directory() . '/inc/blocks.php';
 /* ---------- صفحه محصول: بلوک‌های گوتنبرگ (جایگزین اسنیپت‌های ۱، ۲، ۳، نمایش) ---------- */
 require_once get_stylesheet_directory() . '/inc/product-blocks.php';
 require_once get_stylesheet_directory() . '/inc/product-page.php';
-require_once get_stylesheet_directory() . '/inc/apron-landing.php';
 
 
 //-------------- RB Custom Code ----------------------
