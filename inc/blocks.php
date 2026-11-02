@@ -22,6 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function takdooz_home_blocks() {
 	return array(
+		'apron-landing'     => array(
+			'title'       => 'لندینگ پیش‌بند',
+			'description' => 'هیرو + فیلتر زیردسته‌های پیش‌بند (باریستا، کمری، ضدآب، گل‌فروشی، آرایشگری)',
+			'icon'        => 'grid-view',
+			'keywords'    => array( 'apron', 'landing', 'پیش بند', 'فیلتر' ),
+		),
 		'hero-slider'       => array(
 			'title'       => 'اسلایدر اصلی',
 			'description' => 'اسلایدر بالای صفحه اصلی (custom-template.php خطوط ۳۵–۶۸)',
