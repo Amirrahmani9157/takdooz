@@ -1,5 +1,4 @@
 <?php
-/* probe write test */
 /**
  * Plan C — ACF Blocks homepage migration.
  *
@@ -269,26 +268,39 @@ function takdooz_block_editor_for_home_screen() {
 }
 
 
-/* ================================================================
- * بلوک گوتنبرگ: لندینگ پیش‌بند (apron-landing) — v11 (مینیمال)
- * هیرو (متن سفید) + «خرید پیش‌بند بر اساس دسته‌بندی» با تصویرسازی برند و
- * لینک به صفحه‌ی دسته‌ی هر شغل. موبایل‌اول.
- * ================================================================ */
+/**
+ * Apron category page — landing section + storefront product-card enhancements.
+ *
+ * Follows the same convention as the homepage blocks above (takdooz_* naming,
+ * ACF block registration, markup kept with its block):
+ *
+ *   - takdooz_register_apron_landing / takdooz_render_apron_landing
+ *       ACF block "takdooz-apron-landing" (hero + «خرید پیش‌بند بر اساس دسته‌بندی»),
+ *       injected above the apron category archive by takdooz_apron_category_landing().
+ *   - takdooz_apron_loop_per_page / takdooz_apron_pre_get_posts
+ *       24 products per page on the apron archive (term 2424).
+ *   - takdooz_landing_noindex / takdooz_landing_wp_robots
+ *       noindex for the home-blocks.php landing-preview pages.
+ *   - takdooz_enqueue_child_style
+ *       loads the child style.css site-wide (product-card styling).
+ *   - takdooz_card_interactions / takdooz_cart_icon
+ *       wishlist feedback, whole-card click-through, and the SVG cart-bag icon.
+ */
 
-add_action( 'acf/init', 'tkd_register_apron_landing_block' );
-function tkd_register_apron_landing_block() {
+add_action( 'acf/init', 'takdooz_register_apron_landing' );
+function takdooz_register_apron_landing() {
 	if ( ! function_exists( 'acf_register_block_type' ) ) { return; }
 	acf_register_block_type( array(
 		'name' => 'takdooz-apron-landing', 'title' => 'لندینگ پیش‌بند',
 		'description' => 'لندینگ پیش‌بند', 'category' => 'takdooz-home',
 		'icon' => 'grid-view', 'keywords' => array( 'apron', 'پیش بند' ),
 		'mode' => 'preview', 'supports' => array( 'align' => array( 'full' ), 'anchor' => true, 'jsx' => true ),
-		'render_callback' => 'tkd_render_apron_landing_block',
+		'render_callback' => 'takdooz_render_apron_landing',
 	) );
 }
 
-function tkd_svg( $d ) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' . $d . '</svg>'; }
-function tkdal_icon( $k ) {
+function takdooz_apron_svg( $d ) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' . $d . '</svg>'; }
+function takdooz_apron_icon( $k ) {
 	$p = array(
 		'water'=>'<path d="M12 3c3.5 4.5 6 7.5 6 10.5a6 6 0 0 1-12 0C6 10.5 8.5 7.5 12 3z"/>',
 		'kamari'=>'<path d="M8 3a4 4 0 0 0 8 0"/><path d="M8 3 5 4.5 6 9h1v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9h1l1-4.5L16 3"/>',
@@ -297,10 +309,10 @@ function tkdal_icon( $k ) {
 		'florist'=>'<circle cx="12" cy="7" r="2.3"/><circle cx="7.6" cy="10.3" r="2.3"/><circle cx="16.4" cy="10.3" r="2.3"/><circle cx="9.4" cy="15" r="2.3"/><circle cx="14.6" cy="15" r="2.3"/><path d="M12 17v5"/>',
 		'barber'=>'<circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M20 4 8.5 15.5M20 20 8.5 8.5"/>',
 	);
-	return tkd_svg( isset( $p[$k] ) ? $p[$k] : $p['water'] );
+	return takdooz_apron_svg( isset( $p[$k] ) ? $p[$k] : $p['water'] );
 }
 
-function tkd_render_apron_landing_block( $block, $content = '', $is_preview = false ) {
+function takdooz_render_apron_landing( $block, $content = '', $is_preview = false ) {
 	$apron=2424; $florist=2621; $barber=2545;
 	$apron_url = get_term_link($apron,'product_cat'); $apron_url = is_wp_error($apron_url)? home_url('/product-category/restaurant-clothes/apron/'):$apron_url;
 	$florist_url = get_term_link($florist,'product_cat'); $florist_url=is_wp_error($florist_url)?$apron_url:$florist_url;
@@ -340,7 +352,7 @@ function tkd_render_apron_landing_block( $block, $content = '', $is_preview = fa
 			<div class="tkd-cats"><?php foreach($cats as $c): ?>
 				<a class="tkd-cat" href="<?php echo esc_url($c['link']); ?>">
 					<span class="ph"<?php if($c['img'])echo ' style="background-image:url(\''.esc_url($c['img']).'\')"'; ?>></span>
-					<span class="ic"><?php echo tkdal_icon($c['ic']); ?></span>
+					<span class="ic"><?php echo takdooz_apron_icon($c['ic']); ?></span>
 					<b><?php echo esc_html($c['t']); ?></b>
 					<small><?php echo esc_html($c['s']); ?></small>
 				</a>
@@ -434,13 +446,13 @@ function tkd_render_apron_landing_block( $block, $content = '', $is_preview = fa
 }
 
 /* نمایش لندینگ روی صفحه‌ی دسته‌ی اصلی پیش‌بند (بالای محصولات، سئو حفظ می‌شود) */
-add_action( 'woocommerce_archive_description', 'tkdal_apron_category_landing', 5 );
-function tkdal_apron_category_landing() {
+add_action( 'woocommerce_archive_description', 'takdooz_apron_category_landing', 5 );
+function takdooz_apron_category_landing() {
 	if ( ! function_exists('is_product_category') || ! is_product_category() ) { return; }
 	$obj = get_queried_object();
-	if ( $obj && isset($obj->term_id) && 2424 === (int) $obj->term_id && function_exists('tkd_render_apron_landing_block') ) {
+	if ( $obj && isset($obj->term_id) && 2424 === (int) $obj->term_id && function_exists('takdooz_render_apron_landing') ) {
 		echo '<div class="tkd-apron-archive-landing">';
-		tkd_render_apron_landing_block( array() );
+		takdooz_render_apron_landing( array() );
 		echo '</div>';
 		echo '<script>document.addEventListener(\'DOMContentLoaded\',function(){var b=document.querySelector(\'.takdooz-filter-bar\'),l=document.querySelector(\'.tkd-apron-archive-landing\');if(b&&l&&l.parentNode){l.parentNode.insertBefore(b,l.nextSibling);}});</script>';
 	}
@@ -448,16 +460,16 @@ function tkdal_apron_category_landing() {
 
 
 /* 24 محصول در هر صفحه‌ی دسته‌ی پیش‌بند + صفحه‌بندی */
-add_filter( 'loop_shop_per_page', 'tkdal_apron_per_page', 99 );
-add_action( 'pre_get_posts', 'tkdal_apron_ppp' );
-function tkdal_apron_ppp( $q ) {
+add_filter( 'loop_shop_per_page', 'takdooz_apron_loop_per_page', 99 );
+add_action( 'pre_get_posts', 'takdooz_apron_pre_get_posts' );
+function takdooz_apron_pre_get_posts( $q ) {
 	if ( is_admin() || ! $q->is_main_query() ) { return; }
 	if ( function_exists('is_product_category') && is_product_category() ) {
 		$o = get_queried_object();
 		if ( $o && isset($o->term_id) && 2424 === (int) $o->term_id ) { $q->set( 'posts_per_page', 24 ); }
 	}
 }
-function tkdal_apron_per_page( $n ) {
+function takdooz_apron_loop_per_page( $n ) {
 	if ( function_exists('is_product_category') && is_product_category() ) {
 		$o = get_queried_object();
 		if ( $o && isset($o->term_id) && 2424 === (int) $o->term_id ) { return 24; }
@@ -465,107 +477,42 @@ function tkdal_apron_per_page( $n ) {
 	return $n;
 }
 
-/* moved to style.css */ // add_action( 'wp_head', 'tkdal_global_product_cards', 99 );
-function tkdal_global_product_cards() {
-	echo '<style id="tkd-global-cards">'
-	.'.product-small.box{background:#fff;border:1px solid #ece5d7;border-radius:16px;padding:8px;box-shadow:0 10px 26px -20px rgba(38,50,79,.45);transition:transform .2s,box-shadow .2s}'
-	.'.product-small.box:hover{transform:translateY(-6px);box-shadow:0 22px 44px -22px rgba(38,50,79,.55)}'
-	.'.product-small .box-image{border-radius:12px;overflow:hidden}'
-	.'.product-small .box-image img{transition:transform .45s ease}'
-	.'.product-small.box:hover .box-image img{transform:scale(1.06)}'
-	.'.product-small .box-text{padding:12px 10px 8px}'
-	.'.product-small .box-text .name a,.product-small .box-text .product-title a{color:#26324f;font-weight:700}'
-	.'.product-small .box-text .price{color:#1f5a3c;font-weight:800}'
-	.'.product-small .box-text .price del{color:#aaa;font-weight:500}'
-	.'.product-small .button.ajax_add_to_cart,.product-small .add_to_cart_button,.product-small .box-text .button{border-radius:10px;font-weight:700}'
-	.'</style>';
-}
-
 /* noindex برای صفحات پیش‌نمایش لندینگ (قالب home-blocks.php) */
-function tkdal_is_preview_page() {
+function takdooz_is_landing_preview() {
 	if ( ! function_exists('is_page') || ! is_page() ) { return false; }
 	$id = get_queried_object_id();
 	return $id && 'home-blocks.php' === get_page_template_slug( $id );
 }
-add_filter( 'rank_math/frontend/robots', 'tkdal_preview_noindex' );
-function tkdal_preview_noindex( $robots ) {
-	if ( tkdal_is_preview_page() ) { $robots['index']='noindex'; $robots['follow']='nofollow'; }
+add_filter( 'rank_math/frontend/robots', 'takdooz_landing_noindex' );
+function takdooz_landing_noindex( $robots ) {
+	if ( takdooz_is_landing_preview() ) { $robots['index']='noindex'; $robots['follow']='nofollow'; }
 	return $robots;
 }
-add_filter( 'wp_robots', 'tkdal_preview_wp_robots' );
-function tkdal_preview_wp_robots( $r ) {
-	if ( tkdal_is_preview_page() ) { $r['noindex']=true; $r['nofollow']=true; }
+add_filter( 'wp_robots', 'takdooz_landing_wp_robots' );
+function takdooz_landing_wp_robots( $r ) {
+	if ( takdooz_is_landing_preview() ) { $r['noindex']=true; $r['nofollow']=true; }
 	return $r;
 }
 
 /* enqueue child style.css (not loaded by theme by default) for site-wide product-card styling */
-add_action( 'wp_enqueue_scripts', 'tkdal_enqueue_child_style', 99 );
-function tkdal_enqueue_child_style() {
+add_action( 'wp_enqueue_scripts', 'takdooz_enqueue_child_style', 99 );
+function takdooz_enqueue_child_style() {
 	wp_enqueue_style( 'tkd-child-style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
 }
 
-/* ====== Takdooz product card hooks (reference match) ====== */
-
-function tkd_card_cat_label() {
-	global $product;
-	if ( ! ( $product instanceof WC_Product ) ) { return; }
-	$terms = get_the_terms( $product->get_id(), 'product_cat' );
-	if ( $terms && ! is_wp_error( $terms ) ) {
-		$pick = null;
-		foreach ( $terms as $t ) { if ( ! $pick || $t->parent ) { $pick = $t; } }
-		if ( $pick ) { echo '<span class="tkd-pc-cat">' . esc_html( $pick->name ) . '</span>'; }
-	}
-}
-
-function tkd_card_excerpt() {
-	global $product;
-	if ( ! ( $product instanceof WC_Product ) ) { return; }
-	$ex = $product->get_short_description();
-	$ex = $ex ? wp_strip_all_tags( $ex ) : wp_strip_all_tags( $product->get_description() );
-	$ex = trim( wp_trim_words( $ex, 13, '…' ) );
-	if ( $ex ) { echo '<div class="tkd-pc-ex">' . esc_html( $ex ) . '</div>'; }
-}
-
-function tkd_card_price_label( $html, $product ) {
-	if ( is_admin() ) { return $html; }
-	if ( ! is_product() && ( is_shop() || ( function_exists('is_product_taxonomy') && is_product_taxonomy() ) ) ) {
-		return '<span class="tkd-pc-plabel">قیمت مصرف‌کننده</span>' . $html;
-	}
-	return $html;
-}
-
-/* ===== سایدبار: تعداد محصول + فیلتر محدوده قیمت (بدون رنگ/جنس) ===== */
-
-/* نمایش تعداد محصول کنار هر دسته در ویجت دسته‌بندی */
-
-function tkd_cat_widget_counts( $args ) { $args['show_count'] = 1; return $args; }
-
-/* افزودن فیلتر محدوده قیمت به سایدبار صفحه‌ی دسته‌ی پیش‌بند */
-
-function tkd_apron_price_filter() {
-	if ( ! function_exists('is_product_category') || ! is_product_category() ) { return; }
-	$o = get_queried_object();
-	if ( ! $o || ! isset($o->term_id) || 2424 !== (int) $o->term_id ) { return; }
-	if ( ! class_exists('WC_Widget_Price_Filter') ) { return; }
-	echo '<div id="tkd-price-src" style="display:none">';
-	the_widget( 'WC_Widget_Price_Filter', array( 'title' => 'محدوده قیمت (تومان)' ) );
-	echo '</div>';
-	echo '<script>(function(){function mv(){var s=document.getElementById("tkd-price-src");var cat=document.querySelector(".widget_product_categories");if(s&&cat&&cat.parentNode){var w=s.firstElementChild;if(w){cat.parentNode.insertBefore(w,cat.nextSibling);w.classList.add("tkd-price-widget");}if(s.parentNode){s.parentNode.removeChild(s);}}}if(document.readyState!=="loading"){mv();}else{document.addEventListener("DOMContentLoaded",mv);}})();</script>';
-}
-
 /* wishlist feedback + whole-card click to product */
-add_action( 'wp_footer', 'tkd_card_interactions' );
-function tkd_card_interactions() {
+add_action( 'wp_footer', 'takdooz_card_interactions' );
+function takdooz_card_interactions() {
 	if ( is_admin() ) { return; }
 	echo '<script>(function(){document.addEventListener("click",function(e){var h=e.target.closest&&e.target.closest(".product-small .wishlist-button");if(!h){return;}h.classList.add("tkd-pop");h.classList.toggle("tkd-faved");setTimeout(function(){h.classList.remove("tkd-pop");},360);},true);document.addEventListener("click",function(e){if(!e.target.closest){return;}if(e.target.closest("a, button, input, label, .add-to-cart-button, .wishlist-icon, .quantity, .star-rating")){return;}var card=e.target.closest(".products .product-small");if(!card){return;}var link=card.querySelector(".name.product-title a, .box-image a");if(link&&link.href){window.location.href=link.href;}},false);})();</script>';
 }
 
 /* ===== آیکون سبد خرید (SVG use) + رفع باگ لودینگ دکمه ===== */
-add_action( 'wp_footer', 'tkd_cart_icon' );
-function tkd_cart_icon() {
+add_action( 'wp_footer', 'takdooz_cart_icon' );
+function takdooz_cart_icon() {
 	if ( is_admin() ) { return; }
 	?>
-	<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="icon-shopping_bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7.5h12l-.9 11.6a2 2 0 0 1-2 1.9H8.9a2 2 0 0 1-2-1.9L6 7.5z"/><path d="M9 9V6.6a3 3 0 0 1 6 0V9"/></symbol></svg>
+	<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="icon-shopping_bag" viewBox="0 0 24 24" fill="none"><path d="M3 3h2l1.6 10.1a2 2 0 0 0 2 1.7h7.9a2 2 0 0 0 1.9-1.4L21 6H6.1M9 20a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
 	<script>
 	(function(){
 	function addIcons(){
@@ -580,11 +527,26 @@ function tkd_cart_icon() {
 			u.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href","#icon-shopping_bag");
 			s.appendChild(u);
 			b.insertBefore(s,b.firstChild);
+			var bd=document.createElement("span");bd.className="rb_cart_status_badge";bd.setAttribute("aria-hidden","true");bd.textContent="\u2713";b.appendChild(bd);
 		}
 	}
 	if(document.readyState!="loading"){addIcons();}else{document.addEventListener("DOMContentLoaded",addIcons);}
-	document.addEventListener("added_to_cart",addIcons);window.addEventListener("load",addIcons);var _tkp=false;function _tks(){if(_tkp){return;}_tkp=true;setTimeout(function(){_tkp=false;addIcons();},90);}try{new MutationObserver(function(m){for(var i=0;i<m.length;i++){if(m[i].addedNodes&&m[i].addedNodes.length){_tks();break;}}}).observe(document.body,{childList:true,subtree:true});}catch(e){}
+	if(window.jQuery){jQuery(document.body).on("added_to_cart",function(e,f,h,$b){if($b&&$b.addClass){$b.addClass("is-in-cart");}addIcons();});}window.addEventListener("load",addIcons);var _tkp=false;function _tks(){if(_tkp){return;}_tkp=true;setTimeout(function(){_tkp=false;addIcons();},90);}try{new MutationObserver(function(m){for(var i=0;i<m.length;i++){if(m[i].addedNodes&&m[i].addedNodes.length){_tks();break;}}}).observe(document.body,{childList:true,subtree:true});}catch(e){}
 	})();
 	</script>
 	<?php
+}
+
+/* ===== وضعیت «در سبد خرید» برای دکمه کارت دسته‌بندی (مثل صفحه اصلی) ===== */
+add_filter( 'woocommerce_loop_add_to_cart_link', 'takdooz_loop_in_cart_class', 20, 2 );
+function takdooz_loop_in_cart_class( $html, $product ) {
+	if ( ! function_exists( 'WC' ) || ! WC()->cart || ! $product ) { return $html; }
+	$in_cart = false;
+	foreach ( WC()->cart->get_cart() as $item ) {
+		if ( (int) $item['product_id'] === (int) $product->get_id() ) { $in_cart = true; break; }
+	}
+	$tip = $product->is_type( 'variable' ) ? ( $in_cart ? 'در سبد خرید — انتخاب گزینه دیگر' : 'انتخاب گزینه‌ها' ) : ( $in_cart ? 'در سبد خرید — افزودن مجدد' : 'افزودن به سبد خرید' );
+	$html = preg_replace( '/<a /', '<a title="' . esc_attr( $tip ) . '" ', $html, 1 );
+	if ( $in_cart ) { $html = preg_replace( '/class="/', 'class="is-in-cart ', $html, 1 ); }
+	return $html;
 }
