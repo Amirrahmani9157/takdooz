@@ -399,48 +399,6 @@ function takdooz_render_apron_landing( $block, $content = '', $is_preview = fals
 		.tkd-al .tkd-cat b{font-size:13px}
 		.tkd-al .tkd-cat small{display:block}
 	}
-	/* ===== بهینه‌سازی نوار فیلتر و سایدبار صفحه‌ی دسته (فقط ترم پیش‌بند) ===== */
-	.term-2424 .takdooz-filter-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 18px}
-	.term-2424 .takdooz-sort-wrapper,.term-2424 .takdooz-cat-wrapper{position:relative}
-	.term-2424 #takdooz-sort-toggle,.term-2424 #takdooz-cat-toggle{display:inline-flex;align-items:center;gap:6px;background:#fff !important;border:1.5px solid var(--ln) !important;color:var(--nv) !important;font-weight:800 !important;font-size:13.5px !important;padding:11px 22px !important;border-radius:999px !important;cursor:pointer;transition:.15s;font-family:inherit;box-shadow:0 3px 12px -7px rgba(38,50,79,.4) !important}
-	.term-2424 #takdooz-sort-toggle:hover,.term-2424 #takdooz-cat-toggle:hover{border-color:var(--gd) !important;background:#fff !important;color:var(--nv) !important;box-shadow:0 6px 16px -10px rgba(38,50,79,.5) !important}
-	.term-2424 .takdooz-dropdown{position:absolute;top:calc(100% + 8px);right:0;z-index:60;background:#fff !important;border:1px solid var(--ln) !important;border-radius:14px !important;box-shadow:0 20px 44px -18px rgba(38,50,79,.55) !important;padding:8px !important;min-width:210px;max-height:340px;overflow:auto}
-	.term-2424 .takdooz-dropdown a{display:block!important;padding:10px 14px!important;border-radius:10px!important;color:var(--nv)!important;text-decoration:none!important;font-size:13px!important;font-weight:700!important;transition:.12s!important;margin:2px 0}
-	.term-2424 .takdooz-dropdown a:hover{background:var(--bg)}
-	.term-2424 .takdooz-dropdown a.active{background:var(--nv);color:#fff}
-	.term-2424 #takdooz-cat-menu ul{list-style:none;margin:0;padding:0}
-	.term-2424 #takdooz-cat-menu li a{display:block;padding:8px 14px;border-radius:9px;color:var(--nv);text-decoration:none;font-size:13px;font-weight:600}
-	.term-2424 #takdooz-cat-menu li a:hover{background:var(--bg)}
-	.term-2424 .widget_product_categories .widget-title.shop-sidebar{font-weight:900;color:var(--nv);font-size:15px}
-	.term-2424 ul.product-categories{list-style:none;margin:12px 0 0;padding:0}
-	.term-2424 ul.product-categories li{margin:0 0 7px}
-	.term-2424 ul.product-categories li a{display:block !important;padding:9px 14px !important;border:1px solid var(--ln) !important;border-radius:10px !important;color:var(--nv) !important;text-decoration:none;font-size:12.5px !important;font-weight:700 !important;background:#fff !important;transition:.15s}
-	.term-2424 ul.product-categories li a:hover{border-color:var(--gd) !important}
-	.term-2424 ul.product-categories li.current-cat>a{background:var(--nv) !important;color:#fff !important;border-color:var(--nv) !important}
-	@media(max-width:767px){ .term-2424 .takdooz-filter-bar{position:sticky;top:0;z-index:40;background:#f6f3ec;padding:10px 0;gap:8px} .term-2424 #takdooz-sort-toggle,.term-2424 #takdooz-cat-toggle{flex:1;justify-content:center} }
-	
-	/* ===== v13: modern filter buttons + sidebar + product cards + pagination ===== */
-	.term-2424 #takdooz-sort-toggle,.term-2424 #takdooz-cat-toggle{background:linear-gradient(180deg,#ffffff,#faf7f0)!important;border:1.5px solid var(--ln)!important;color:var(--nv)!important;border-radius:999px!important;padding:11px 22px!important;font-weight:800!important;box-shadow:0 4px 14px -8px rgba(38,50,79,.45)!important}
-	.term-2424 #takdooz-sort-toggle:hover,.term-2424 #takdooz-cat-toggle:hover{border-color:var(--gd)!important;transform:translateY(-1px)}
-	.term-2424 .widget_product_categories{background:#fff;border:1px solid var(--ln);border-radius:16px;padding:16px 14px;box-shadow:0 12px 30px -22px rgba(38,50,79,.5)}
-	.term-2424 .widget_product_categories .widget-title.shop-sidebar{font-weight:900!important;color:var(--nv)!important;font-size:15px!important}
-	.term-2424 .widget_product_categories .is-divider{height:3px!important;background:var(--gd)!important;width:40px!important;margin:8px 0 2px auto!important}
-	.term-2424 ul.product-categories{margin:12px 0 0!important;padding:0!important;list-style:none!important}
-	.term-2424 ul.product-categories li{margin:0 0 5px!important;border:none!important;padding:0!important}
-	.term-2424 ul.product-categories li a{display:block!important;padding:9px 13px!important;border-radius:10px!important;color:var(--nv)!important;font-size:12.5px!important;font-weight:700!important;background:#f6f3ec!important;border:1px solid transparent!important;transition:.15s!important;text-decoration:none!important}
-	.term-2424 ul.product-categories li a:hover{background:#fff!important;border-color:var(--gd)!important}
-	.term-2424 ul.product-categories li.current-cat>a{background:var(--nv)!important;color:#fff!important;border-color:var(--nv)!important}
-	.term-2424 ul.product-categories ul.children{margin:5px 8px 7px!important;padding:0!important;list-style:none!important}
-	.term-2424 ul.product-categories ul.children li a{background:transparent!important;font-weight:600!important;font-size:12px!important;color:var(--mut)!important;padding:6px 12px!important}
-	.term-2424 ul.product-categories ul.children li a:hover{background:#f6f3ec!important;color:var(--nv)!important}
-	.term-2424 .products .col{margin-bottom:6px}
-	.term-2424 .products .price{color:#1f5a3c!important;font-weight:800!important}
-	.term-2424 .products .price del{color:#aaa!important;font-weight:500!important}
-	.term-2424 .woocommerce-pagination ul{border:none!important;display:flex!important;gap:8px;justify-content:center;flex-wrap:wrap;margin:26px 0 0}
-	.term-2424 .woocommerce-pagination ul li{border:none!important;margin:0!important;overflow:visible!important}
-	.term-2424 .woocommerce-pagination ul li .page-number{display:grid!important;place-items:center;min-width:42px;height:42px;padding:0 12px;border:1.5px solid var(--ln)!important;border-radius:12px!important;color:var(--nv)!important;font-weight:800!important;background:#fff!important;line-height:1!important}
-	.term-2424 .woocommerce-pagination ul li .page-number.current{background:var(--nv)!important;color:#fff!important;border-color:var(--nv)!important}
-	.term-2424 .woocommerce-pagination ul li a.page-number:hover{border-color:var(--gd)!important}
 	</style>
 	<?php
 }
